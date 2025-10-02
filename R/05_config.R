@@ -33,3 +33,12 @@ load_qc <- function(path){
   y <- yaml::read_yaml(path)
   y
 }
+
+# Load shortlist configuration (families to include and fixed CD references)
+# Returns a list with elements `families` (character vector) and `include_cd_fixed` (character vector)
+load_shortlist <- function(path){
+  y <- yaml::read_yaml(path)
+  fams <- if (is.null(y$shortlist$families)) character(0) else as.character(y$shortlist$families)
+  fixed <- if (is.null(y$shortlist$include_cd_fixed)) character(0) else as.character(y$shortlist$include_cd_fixed)
+  list(families = fams, include_cd_fixed = fixed)
+}
