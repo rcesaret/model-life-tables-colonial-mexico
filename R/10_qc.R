@@ -44,30 +44,22 @@ read_observed <- function(ds){
   stop("Unknown reader specified in datasets.yml")
 }
 
-# QC and optional light smoothing (Arriaga / Carrier-Farrag). :contentReference[oaicite:2]{index=2}
+# QC and optional light smoothing (Arriaga / Carrier-Farrag).
 qc_and_adjust <- function(obs_long, cfg_qc){
-  # We compute Age-Sex Accuracy Index on 5y bins (works on grouped ages). :contentReference[oaicite:3]{index=3}
+  # We compute Age-Sex Accuracy Index on 5y bins (works on grouped ages).
   thresholds <- cfg_qc$thresholds
   # split by geography x sex or total
   obs_long |>
     group_by(dataset_id, schema_id, geography, sex) |>
     arrange(age_lower, .by_group = TRUE) |>
-    summarise(
+    reframe(
       age_lower = age_lower,
       age_upper = age_upper,
       count_raw = count,
-      .groups = "drop_last"
+      count_adj = count,
+      asai = NA_real_,
+      smoothing_note = "none"
     ) |>
-    group_modify(~{
-      dat <- .x
-      ages <- dat$age_lower
-      # Age-Sex Accuracy only meaningful for male/female; for total we skip.
-      asai <- NA_real_
-      if(unique(.y$sex) %in% c("male","female")) {
-        # need both male/female simultaneously; leave NA here, computed later in reporting
-        asai <- NA_real_
-      }
-      tibble(dat, count_adj = dat$count_raw, asai = asai, smoothing_note = "none")
-    }) |>
-    ungroup()
+    ungroup() |>
+    mutate(unit_id = paste(dataset_id, geography, sex, sep = "_"))
 }

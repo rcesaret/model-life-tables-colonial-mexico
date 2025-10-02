@@ -17,7 +17,7 @@ source("R/50_deepdive.R")
 source("R/55_sparsebins.R")
 source("R/70_reporting.R")
 
-plan(multisession)
+future::plan(future::multisession)
 
 list(
   # Config

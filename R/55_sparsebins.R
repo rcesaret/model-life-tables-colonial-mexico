@@ -13,3 +13,10 @@ g2_bootstrap_p <- function(O, p_hat, B = 499L){
   G2_obs <- 2 * sum(ifelse(O > 0, O * log(O / (N*p_hat)), 0))
   mean(sims >= G2_obs)
 }
+
+# Robustness checks for finalists (placeholder for future implementation)
+robustness_all <- function(shortlists, obs_qc, mlt_proj, r_grid){
+  # Placeholder for robustness diagnostics (bootstrap p-values, sensitivity analyses)
+  # Returns shortlists with placeholder robustness metrics
+  shortlists
+}

@@ -81,13 +81,42 @@ read_un_1y <- function(path){
 # Expect columns: sex,family='West',level,age_lower,age_upper,Lx (or nLx)
 read_cd_west <- function(path){
   df <- read_csv_safely(path)
-  out <- df |>
-    rename_with(~tolower(.x)) |>
+  df <- df |> rename_with(~tolower(.x))
+
+  df_long <- df |>
+    tidyr::pivot_longer(
+      cols = -c(agebracket, agebracketstart, agebracketend),
+      names_to = "name",
+      values_to = "Lx"
+    ) |>
+    mutate(
+      name_upper = toupper(name),
+      tokens = stringr::str_match(name_upper, "^(\\d+)([A-Z]+)_(M|F)_R(\\d+)$"),
+      level_code = tokens[, 2],
+      family_code = tokens[, 3],
+      sex_code = tokens[, 4],
+      r_code = tokens[, 5],
+      Lx = as.numeric(Lx)
+    ) |>
+    tidyr::drop_na(level_code, family_code, sex_code)
+
+  df_long |>
     mutate(
       source = "CD",
-      family = ifelse(is.na(family), "West", family),
-      model_id = paste(source, family, level, sex, sep=":")
+      family = dplyr::case_when(
+        family_code == "W" ~ "West",
+        TRUE ~ toupper(family_code)
+      ),
+      level = paste0("Level", level_code),
+      sex = dplyr::case_when(
+        sex_code == "M" ~ "male",
+        sex_code == "F" ~ "female",
+        TRUE ~ sex_code
+      ),
+      age_lower = as.numeric(agebracketstart),
+      age_upper = suppressWarnings(as.numeric(agebracketend)),
+      age_upper = ifelse(is.na(age_upper), NA_real_, age_upper)
     ) |>
-    select(source, family, level, sex, age_lower, age_upper, Lx = any_of(c("lxn","nlx","Lx","nLx","Lx_n","Lxn")))
-  out
+    select(source, family, level, sex, age_lower, age_upper, Lx) |>
+    mutate(model_id = paste(source, family, level, sex, sep=":"))
 }

@@ -3,8 +3,11 @@ suppressPackageStartupMessages({ library(yaml); library(dplyr); library(purrr); 
 
 load_schema_file <- function(path){
   y <- yaml::read_yaml(path)
-  bins <- tibble::as_tibble(do.call(rbind, y$bins)) |>
-    transmute(age_lower = as.numeric(V1), age_upper = as.numeric(V2))
+  bins <- purrr::map_dfr(y$bins, function(b){
+    lo <- as.numeric(b[[1]])
+    up <- if(length(b) < 2 || is.null(b[[2]])) NA_real_ else as.numeric(b[[2]])
+    tibble::tibble(age_lower = lo, age_upper = up)
+  })
   list(schema_id = y$schema_id, label = y$label, bins = bins)
 }
 
@@ -18,7 +21,7 @@ load_schema_registry <- function(dir){
 
 load_dataset_registry <- function(path){
   y <- yaml::read_yaml(path)
-  tibble::as_tibble(y$datasets)
+  purrr::map_dfr(y$datasets, tibble::as_tibble)
 }
 
 load_rgrid <- function(path){

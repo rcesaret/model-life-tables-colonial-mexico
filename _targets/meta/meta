@@ -1,0 +1,63 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+cfg_schemas|stem|17fea414fb8a45ea|3d57ba65d5c528a7|02594229980fdf01|-1201114751||t20363.4744212468s|s461b|461|rds|local|vector|||0.078|incomplete final line found on 'configs/schemas/schema_16c_coarse.yml'|
+cd_west_path|stem|1b9be3876ad89372|9b7d6b0a009c29c9|2c530c1562a7fbd1|-1251208513||t20363.4744218157s|s88b|88|rds|local|vector|||0||
+cfg_rgrid|stem|8b2f1f679c31f878|231eb8c6f7ad59a3|e53946446cad6c6b|-1928280317||t20363.4744231288s|s196b|196|rds|local|vector|||0||
+un_1y_path|stem|5505cd2eb5a2f1a3|ea4244706d70a203|2c530c1562a7fbd1|-272687021||t20363.4744236242s|s104b|104|rds|local|vector|||0||
+un_abr_path|stem|085742d850c10654|8d8bbeac2bbe0ba8|2c530c1562a7fbd1|2095814346||t20363.4744240161s|s107b|107|rds|local|vector|||0||
+cfg_datasets|stem|d133d6685af26806|939036a98e47dff3|699717c954b1520c|-1414857787||t20363.4757192525s|s335b|335|rds|local|vector||cfg_datasets_ab85c1976e15aa0f*cfg_datasets_e7baf54ee7e8912a|0||
+cfg_qc|stem|caf8d8382de99ef7|cbcfc85c4ea4fc65|83912f0b8fcf35ec|369373185||t20363.4757202096s|s208b|208|rds|local|vector|||0||
+mlt_cdwest|stem|688d47b6fcb7c21d|b5d8356115d11c9f|7896069b8b9e4141|844629267||t20363.4842110348s|s1929b|1929|rds|local|vector|||0.156||
+mlt_1y|stem|3be1ac29f0aefafd|5f9ec4d229c41716|ab717cd6e339759c|-47756806||t20363.4842437702s|s2326460b|2326460|rds|local|vector|||1.484|Unknown or uninitialised column: `x`.. Unknown or uninitialised column: `Age`.. Unknown or uninitialised column: `sex`.. Unknown or uninitialised column: `SEX`.. Unknown or uninitialised column: `Pattern`.. Unknown or uninitialised column: `Level`.. Unknown or uninitialised column: `e(0)`.. Unknown or uninitialised column: `Variant`.|
+mlt_abridged|stem|d2f7df985d928f39|5352a2b73eed3f05|bb45cc1fd0c340fe|-377398995||t20363.4842484218s|s191b|191|rds|local|vector|||0.312|Unknown or uninitialised column: `Lx n`.. Unknown or uninitialised column: `LxN`.. Unknown or uninitialised column: `sex`.. Unknown or uninitialised column: `SEX`.. Unknown or uninitialised column: `Pattern`.. Unknown or uninitialised column: `Level`.. Unknown or uninitialised column: `e(0)`.. Unknown or uninitialised column: `Variant`.|
+obs_raw_0fafd4cbcf88601e|branch|22381f01371a4c38|c58d401f3d93f022|d14dd37463b403a9|1590011587||t20363.4842521373s|s1944b|1944|rds|local|vector|obs_raw||0.125|NAs introduced by coercion|
+obs_raw_7aad7ba8b03cc850|branch|21f554f64e69ed21|c58d401f3d93f022|d14dd37463b403a9|-85343862||t20363.484253293s|s3074b|3074|rds|local|vector|obs_raw||0.078||
+obs_raw|pattern|3e2251e8ab007fd3|c58d401f3d93f022||1570061033||||5018|rds|local|vector||obs_raw_0fafd4cbcf88601e*obs_raw_7aad7ba8b03cc850|0.203||
+mlt_all|stem|3e26ddf217f04a81|a23e2b43b3c9af14|13bedadc086ed640|-986342721||t20363.4842545804s|s1975b|1975|rds|local|vector|||0||
+mlt_proj|stem|371324db8af3efd7|7051648b8a94297a|5abc05a246bd7a23|-273262588||t20363.4859728741s|s345062b|345062|rds|local|vector|||1.5||
+obs_qc_d39bdbc93b0fcadd|branch|65ed9b15494742d5|e71e7c0377b48d28|09e025027aa017af|486700690||t20363.5058189097s|s2162b|2162|rds|local|vector|obs_qc||0.031||
+obs_qc_4e743468bba754ff|branch|20088931d9b29cc9|e71e7c0377b48d28|4084832a974470be|-1335511172||t20363.5058196829s|s3603b|3603|rds|local|vector|obs_qc||0.047||
+obs_qc|pattern|1a6af8325ca0130c|e71e7c0377b48d28||-251140805||||5765|rds|local|vector||obs_qc_d39bdbc93b0fcadd*obs_qc_4e743468bba754ff|0.078||
+qc_appendices|stem|6941119e3bdbee83|9cc31f4369047aea|c110aa4a45693bf8|-318737282||t20363.5058212619s|s46b|46|rds|local|vector|||0||
+age_midpoint|function|c1a547e02d0d08c7
+.Random.seed|object|e9698b2858a5ae87
+load_qc|function|b9e48ae5bfb58d5a
+read_csv_safely|function|69ea06c93d3cee73
+robustness_all|function|c12c717a04d2f2e4
+load_rgrid|function|b9e48ae5bfb58d5a
+deepdive_all|function|c12c717a04d2f2e4
+load_schema_file|function|6b6c2b5500e86a51
+write_screening_tables|function|c51fd2442f713512
+g2_bootstrap_p|function|2a7a577d59cf127d
+loglik_multinom|function|427e75ed7874c7d7
+gof_stats|function|a88a9087435289aa
+hellinger_dist|function|24bdf8bd817335a0
+tv_dist|function|ecfa42ae2afa9b23
+wasserstein1d_safe|function|889cac64413bafa6
+make_unit_id|function|01360a875e2e8bf7
+apply_smoothing_if_needed|function|dc4faa3a9132f148
+agg_1y_to_bins|function|f16e93f5dca8f022
+rank_and_select_all|function|530c9ba2319cebeb
+write_finalist_reports|function|3a1c983c744f2f55
+write_qc_reports|function|2fdb7f7cc3946615
+load_dataset_registry|function|6dc8526e671eb2b0
+agg_abridged_to_bins|function|46020eb21f482573
+require_pkgs|function|c410ef5bf06470fc
+qc_and_adjust|function|11629ae6956e69ed
+stable_pred|function|44ae1eb71bb13d4d
+read_cd_west|function|0b7b8610f3fee052
+read_observed|function|6afdddedfe527c93
+read_un_1y|function|240dd11ca391afee
+read_un_abridged|function|a4fceccace49d8c3
+load_schema_registry|function|102fbb1447ac5d35
+project_all_models_to_schemas|function|cab6e24a2912553e
+profile_r|function|88c9876fb72d2182
+screen_models_for_unit|function|b88f0a8460e8e6b3
+screen_unit_991d0e68d3e7f694|branch|dea3e203634d4350|30f1fccb68c25977|af77dc775ee6eb28|-146336927||t20363.5629377071s|s13100b|13100|rds|local|vector|screen_unit||414.797|Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised co|
+screen_unit_f7d3689b93ec746b|branch|d5e9e3fe2fb483db|30f1fccb68c25977|b62cf9a4917fed1b|2061889632||t20363.6164815863s|s200593b|200593|rds|local|vector|screen_unit||4625.922|Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised column: `age_upper`.. Unknown or uninitialised co|
+screen_unit|pattern|c5e4acc0a99bbbde|30f1fccb68c25977||1761037070||||213693|rds|local|vector||screen_unit_991d0e68d3e7f694*screen_unit_f7d3689b93ec746b|5040.719||
+screen_all|stem|61fbf1a1321f0734|e69c0ebdd5e8f35b|5ab7c3300fdbb424|-1444797563||t20363.6164851369s|s211115b|211115|rds|local|vector|||0||
+shortlists|stem|4a7b070628d4ad75|6f074b4a714a9ca4|91926090cfabdef5|493160546||t20363.6164883477s|s2431b|2431|rds|local|vector|||0.094||
+screen_tables|stem|a053487ccf0226da|35053472d2c851fb|2c135868581a9220|614935365||t20363.6167543947s|s815b|815|rds|local|vector|||22.859||
+deepdive_reports|stem|4a7b070628d4ad75|6b177ea2a4648a33|a1b58bf56146315d|2005052752||t20363.6167557245s|s2431b|2431|rds|local|vector|||0||
+robustness|stem|4a7b070628d4ad75|b77c698bee842cc8|31d59421fcbadc3f|-335602862||t20363.6167570159s|s2431b|2431|rds|local|vector|||0||
+finalist_decks|stem|6941119e3bdbee83|2892a2445e684695|0a54789dedeb8826|1036601429||t20363.6167574452s|s46b|46|rds|local|vector|||0||
