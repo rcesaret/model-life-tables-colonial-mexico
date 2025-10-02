@@ -1,0 +1,8 @@
+thresholds:
+  whipple_flag: 125
+  myers_flag: 40
+  asai_inspect: 20
+  asai_flag: 40
+actions:
+  smoothing_methods: ["arriaga","cf"]   # arriaga, carrier-farrag
+  allow_pclm: true
