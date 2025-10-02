@@ -1,0 +1,8 @@
+default:
+  r_min: -0.03
+  r_max: 0.06
+  r_step: 0.001
+  refine_window: 0.005
+  refine_step: 0.0002
+
+overrides: []
