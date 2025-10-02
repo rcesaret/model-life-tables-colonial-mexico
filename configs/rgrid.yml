@@ -1,8 +1,15 @@
+r_grid_screen:
+  values: [-0.005, 0.0, 0.005, 0.01]
+
+r_grid_fine:
+  start: 0.000
+  stop: 0.015
+  by: 0.0005
+
+# Backward-compatibility block (legacy fields used by older functions)
 default:
   r_min: -0.03
   r_max: 0.06
   r_step: 0.001
   refine_window: 0.005
   refine_step: 0.0002
-
-overrides: []
