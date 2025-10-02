@@ -1,0 +1,13 @@
+shortlist:
+  families:
+    - "West"
+    - "North"
+    - "Chilean"
+    - "General"
+    - "Far Eastern"
+    - "South Asian"
+  include_cd_fixed:
+    - "CD:West:Level1"
+    - "CD:West:Level3"
+    - "CD:West:Level8"
+    - "CD:South:Level1"
