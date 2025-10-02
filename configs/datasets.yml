@@ -1,0 +1,16 @@
+datasets:
+  - dataset_id: OAX1777_total
+    path: data_raw/18th_century/Oaxaca1777.csv
+    schema_id: schema_oax_90plus
+    reader: oaxaca
+    sex_mode: total   # the file contains total and/or split; parser handles it
+    geography: Oaxaca
+    year: 1777
+
+  - dataset_id: MX1790_states
+    path: data_raw/18th_century/Census1790_States_AgeSex2.csv
+    schema_id: schema_1790_50plus
+    reader: us1790
+    sex_mode: both
+    geography_field: Name
+    year: 1790
