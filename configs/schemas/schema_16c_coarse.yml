@@ -1,0 +1,7 @@
+schema_id: schema_16c_coarse
+label: "16th century (coarse)"
+bins:
+  - [0, 3]
+  - [4, 14]
+  - [15, 50]
+  - [50, null]
