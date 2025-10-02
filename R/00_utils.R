@@ -4,6 +4,14 @@ suppressPackageStartupMessages({
   library(stringr); library(tibble); library(glue)
 })
 
+# Silence NSE notes for lintr/R CMD check
+utils::globalVariables(c(
+  "model_id","source","family","level","r_hat","AIC_weight",
+  "G2","X2","Hellinger","TV","Wasserstein1","JS",
+  "age_lower","age_upper","sex","Lx","age","schema_id","schema_label",
+  "Name"
+))
+
 require_pkgs <- function(pkgs){
   miss <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
   if(length(miss)) stop(glue("Missing packages: {paste(miss, collapse=', ')}. Install them via install.packages()."), call. = FALSE)
@@ -38,4 +46,13 @@ tv_dist <- function(p, q){
 wasserstein1d_safe <- function(x_support, p, q){
   if(!requireNamespace("transport", quietly = TRUE)) return(NA_real_)
   transport::wasserstein1d(x_support, p, q, p = 1)
+}
+
+# Jensen–Shannon divergence (base e). Returns finite, symmetric, bounded in [0, log(2)].
+js_divergence <- function(p, q, eps = 1e-12){
+  p <- pmax(p, eps); q <- pmax(q, eps)
+  p <- p / sum(p); q <- q / sum(q)
+  m <- 0.5 * (p + q)
+  kl <- function(a, b){ sum(a * log(a / b)) }
+  0.5 * kl(p, m) + 0.5 * kl(q, m)
 }
